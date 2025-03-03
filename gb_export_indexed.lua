@@ -14,7 +14,7 @@ end
 local dmg_pal_hex = {"#e0f8cf","#86c06c","#306850","#071821"}
 local pal_map = {
     --{221, 220, 219, 218}, -- normal
-    {0, 0, 0, 0}, --gets filled automatically with default DMG PAL 
+    {0, 0, 0, 0}, --gets filled automatically with default DMG PAL indexes
     {0, 221, 220, 218}, -- PINK as transparent / sprite pal
     {218, 220, 221, 219}, -- battlesys inverted pal
 }
@@ -450,7 +450,6 @@ end
 dialog:file{id="file_save_as", label="Save as...", save=true, filename=filename, onchange=filename_change}
 
 function export_stuff()
-    -- TODO ask user for confirmation (on filename then export)
     local dlg = Dialog{title="Confirm", parent=dialog}
     dlg:label{ id="userfilepath", text="save to "..filename.." ?" }
     dlg:button{ id="confirm", text="Confirm" }
